@@ -1,0 +1,91 @@
+.white {
+  background: white;
+}
+
+.intrd-container {
+  padding: 2% 5% 5% 5%;
+
+  .intrd-container-intrl {
+    .title {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+    .grid-wrapper {
+      align-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      grid-gap: 10px;
+
+      .zone {
+        color: #FFF;
+        font-size: 2em;
+        border-radius: 4px;
+        transition: all 0.3s linear;
+      }
+
+      .card {
+        background-color: #FFF;
+        margin: 20px;
+
+        .card-title {
+          text-align: center;
+          padding: 0 20px;
+
+          .app-icon {
+            width: 100%;
+            height: 70px;
+            font-size: 60px;
+          }
+
+          .orange {
+            fill: #ff9800;
+          }
+          .blue {
+            fill: #00bcd4;
+          }
+          .red {
+            fill: #F44336;
+          }
+        }
+        .text {
+          padding: 0 20px 20px;
+
+          p {
+            font-size: 1rem;
+            color: rgb(26, 24, 24);
+          }
+        }
+
+        h1 {
+          font-size: 1.5rem;
+          color: rgb(26, 24, 24);
+        }
+      }
+    }
+    @media(max-width: 800px) {
+      .grid-wrapper {
+        align-content: center;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(350px, 1fr));
+        grid-gap: 10px;
+      }
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+ CSS styles go here */
+      display: -ms-grid;
+      display: grid;
+      height: 100%;
+      -ms-grid-rows: 1fr 1fr;
+      -ms-grid-columns: 1fr 1fr;
+      grid-template: "a   b" 1fr "c   d" 1fr / 1fr  1fr;
+    }
+  }
+}
+

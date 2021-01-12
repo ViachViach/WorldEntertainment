@@ -1,0 +1,38 @@
+.blue {
+    background: #2d3436;
+}
+
+.container {
+    /* vh = view height. We do this to make sure banner fills entire view */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+We set the image within the cover layout
+rem = relative to font-size of root element. This is since we've created different font size to vary based on screen, 
+so this will automatically change this as well
+*/
+.cover {
+    width:100%;
+    height:100%;
+}
+
+/*
+    We'd like the text to appear in the center of the image and above it.
+ */
+.coverText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.coverText > h1 {
+    color: white;
+    font-size: 40px;
+}

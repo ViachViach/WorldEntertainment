@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="leftMenuHome" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Home </note>
+        <note priority="1" from="meaning">Left Menu</note>
+      </trans-unit>
+      <trans-unit id="leftMenuBenefits" datatype="html">
+        <source>Benefits
+        of using</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Benefits </note>
+        <note priority="1" from="meaning">Left Menu</note>
+      </trans-unit>
+      <trans-unit id="leftMenuProduct" datatype="html">
+        <source>About
+        Template</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">About Template </note>
+        <note priority="1" from="meaning">Left Menu</note>
+      </trans-unit>
+      <trans-unit id="leftMenuAboutUs" datatype="html">
+        <source>About Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">About Us </note>
+        <note priority="1" from="meaning">Left Menu</note>
+      </trans-unit>
+      <trans-unit id="leftMenuContact" datatype="html">
+        <source>Contacts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Contact </note>
+        <note priority="1" from="meaning">Left Menu</note>
+      </trans-unit>
+      <trans-unit id="topMenuHome" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Home </note>
+        <note priority="1" from="meaning">Top Menu</note>
+      </trans-unit>
+      <trans-unit id="topMenuBenefits" datatype="html">
+        <source>Benefits of using</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Benefits </note>
+        <note priority="1" from="meaning">Top Menu</note>
+      </trans-unit>
+      <trans-unit id="topMenuProduct" datatype="html">
+        <source>About Template</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">About Template </note>
+        <note priority="1" from="meaning">Top Menu</note>
+      </trans-unit>
+      <trans-unit id="topMenuAboutUs" datatype="html">
+        <source>About Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">About Us </note>
+        <note priority="1" from="meaning">Top Menu</note>
+      </trans-unit>
+      <trans-unit id="topMenuContact" datatype="html">
+        <source>Contacts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/containers/main-layout/main-layout.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">Contact </note>
+        <note priority="1" from="meaning">Top Menu</note>
+      </trans-unit>
+      <trans-unit id="homeCoverTextTitle" datatype="html">
+        <source>Making world better</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Home Title </note>
+        <note priority="1" from="meaning">Home</note>
+      </trans-unit>
+      <trans-unit id="ContentTitle" datatype="html">
+        <source>About Template ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Title </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentSubTitle1" datatype="html">
+        <source>Сross browser</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 1st </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentText1" datatype="html">
+        <source>This template our create work across an acceptable number of web
+              browsers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Text 1st </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentLearnMore" datatype="html">
+        <source>Learn more</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <note priority="1" from="description">Lern More </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentSubTitle2" datatype="html">
+        <source>Modern stack</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 2nd </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentText2" datatype="html">
+        <source>Our template uses Angular framework, reactive state management,
+              SASS
+              and etc. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">Text 2nd </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentSubTitle3" datatype="html">
+        <source>Multi languages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 3rd </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentText3" datatype="html">
+        <source>This template provides opportunity your app to be usable in
+              different locales</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">Text 3rd </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentSubTitle4" datatype="html">
+        <source>Low price</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 4th </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="ContentText4" datatype="html">
+        <source>Reusing pre-built templates will save you money. We save our time
+              - you save your money</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/content/content.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note priority="1" from="description">Text 4th </note>
+        <note priority="1" from="meaning">Content</note>
+      </trans-unit>
+      <trans-unit id="IntroduceTitle" datatype="html">
+        <source>Here will be content ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Title </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceSubTitle1" datatype="html">
+        <source>Really Fast</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 1st </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText1_1" datatype="html">
+        <source>We are using prepared template to make your web site as soon as posible.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Desc1_1 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText1_2" datatype="html">
+        <source>We will just change content, images, colors scheme of page according targets of your new web site and your wishes.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Desc1_2 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText1_3" datatype="html">
+        <source>Our template allows to use multi languages, so you can share your products around world.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Desc1_3 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceSubTitle2" datatype="html">
+        <source>Modern Design</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 2nd </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText2_1" datatype="html">
+        <source>We know how important to have web site which meets last modern requirements, so we suggest page was implemented by most popular technical stack.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">Desc2_1 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText2_2" datatype="html">
+        <source>Landing structure allows to focus on your product or service, which is suggested by you.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Desc2_2 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText2_3" datatype="html">
+        <source>It is easy-peasy supporting, it looks modern, it is really cheap to you as a customer.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">Desc2_3 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceSubTitle3" datatype="html">
+        <source>Improve image</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">Sub Title 3rd </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText3_1" datatype="html">
+        <source>When you are choosing which of one of companies will provide you some service, let say truth, you will select company which share information about provided services by her, about herself.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <note priority="1" from="description">Desc3_1 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText3_2" datatype="html">
+        <source>Right?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">Desc3_2 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText3_3" datatype="html">
+        <source>We make sure so.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Desc3_3 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="IntroduceText3_4" datatype="html">
+        <source>Cause it sounds like company with a strong experience, which spent time and resources for her brand, her face.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/introduce/introduce.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Desc3_4 </note>
+        <note priority="1" from="meaning">Introduce</note>
+      </trans-unit>
+      <trans-unit id="ContactTitle" datatype="html">
+        <source>Feel free and contact us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Title </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="ContactDesc" datatype="html">
+        <source>This we can add some text to provide more information to clien <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> about all that can be neccesary to them.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Desc </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormName" datatype="html">
+        <source>Your First Name: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Name </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendHintName" datatype="html">
+        <source>Enter your first name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Hint Name</note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormSurename" datatype="html">
+        <source>Your Last Name: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Surename </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendHintSurename" datatype="html">
+        <source>Enter your last name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Hint Surename</note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="ContactFormAddress1" datatype="html">
+        <source>Prague, Czech Republic,</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">ContactForm Address 1st </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="ContactFormAddress2" datatype="html">
+        <source> 15800, Praha 5</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">ContactForm Address 2nd </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormEmail" datatype="html">
+        <source>Enter your email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Email </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendHintEmail" datatype="html">
+        <source>Your e-mail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Hint Email</note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormCountry" datatype="html">
+        <source>Country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Email </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormPhone" datatype="html">
+        <source>Your phone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Phone </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="ContactFormPhone" datatype="html">
+        <source>+420-589-658-987</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <note priority="1" from="description">ContactForm Phone </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormMsg" datatype="html">
+        <source>Enter your questions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Msg </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="ContactFormEmail" datatype="html">
+        <source>mr.azaroff@gmail.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <note priority="1" from="description">ContactForm Email </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="SendFormSubmit" datatype="html">
+        <source>Send</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/contact/contact.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <note priority="1" from="description">SendForm Submit </note>
+        <note priority="1" from="meaning">Contact</note>
+      </trans-unit>
+      <trans-unit id="AboutUsTitle" datatype="html">
+        <source>About Us ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clients/client.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Title </note>
+        <note priority="1" from="meaning">About Us</note>
+      </trans-unit>
+      <trans-unit id="AboutUsDesc1" datatype="html">
+        <source>We participated in projects for various purposes - payment systems, document flow, integration solutions. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>To acheave excellent result we have always used modern stack. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>So by this reason we have strong experience in such technologies as:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clients/client.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Desc 1st </note>
+        <note priority="1" from="meaning">About Us</note>
+      </trans-unit>
+      <trans-unit id="AboutUsDesc2" datatype="html">
+        <source>We have earned the trust of companies as software developers <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> where we could implement their requirements according to their purposes, delivery products on time
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/clients/client.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <note priority="1" from="description">Desc 2nd </note>
+        <note priority="1" from="meaning">About Us</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
