@@ -35,6 +35,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             grid-gap: 10px;
+            padding-top: 5%;
+          padding-bottom: 5%;
 
             mat-card {
                 padding: 0;

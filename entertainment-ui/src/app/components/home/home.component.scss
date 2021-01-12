@@ -12,7 +12,7 @@
 
 /*
 We set the image within the cover layout
-rem = relative to font-size of root element. This is since we've created different font size to vary based on screen, 
+rem = relative to font-size of root element. This is since we've created different font size to vary based on screen,
 so this will automatically change this as well
 */
 .cover {
@@ -35,4 +35,7 @@ so this will automatically change this as well
 .coverText > h1 {
     color: white;
     font-size: 40px;
+  span {
+    color: #F44336;
+  }
 }
