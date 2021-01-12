@@ -10,7 +10,6 @@ import {AppMaterialModule} from './app-material.module';
 import {MainLayoutComponent} from './containers/main-layout/main-layout.component';
 import {HomeComponent} from './components/home/home.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {IntroduceComponent} from './components/introduce/introduce.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ScrollDispatcher} from '@angular/cdk/scrolling';
 import {ContactComponent} from './components/contact/contact.component';
@@ -28,7 +27,7 @@ import {IsoCodeffect} from './store/effect/isoCode.effects';
 import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import { LangMenuComponent } from './components/lang-menu/lang-menu.component';
 import { SocialComponent } from './components/social/social.component';
-import {ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import {ContentComponent} from "./components/content/content.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +35,7 @@ import {ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
     MainLayoutComponent,
     HomeComponent,
     FooterComponent,
-    IntroduceComponent,
+    ContentComponent,
     ContactComponent,
     PhoneNumberCustomInput,
     LangMenuComponent,

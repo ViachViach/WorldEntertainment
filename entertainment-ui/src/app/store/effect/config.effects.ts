@@ -16,8 +16,7 @@ export class ConfigEffect {
 
   constructor(private store: Store<IAppState>,
               private configService: ConfigService,
-              private actions: Actions,
-              private router: Router) {
+              private actions: Actions) {
   }
 
   @Effect()
@@ -48,8 +47,6 @@ export class ConfigEffect {
       this.store.pipe(select(selectConfig))
     ),
     switchMap(([action, configState]) => {
-      console.log(action);
-      console.log(configState);
       if (configState.local === 'En') {
         window.location.href = `${environment.host}/en`;
       } else if (configState.local === 'Ru') {
