@@ -1,7 +1,7 @@
 package com.world.entertainment.worldentertainment.controller;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.exception.HttpNotFoundException;
+import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
 import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,11 +21,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/get/{id}")
-    public UserDTO get(@PathVariable("id") int id) throws HttpNotFoundException {
-        try {
-            return this.userService.getByName(id);
-        } catch (ClassNotFoundException e) {
-            throw new HttpNotFoundException("User not found", 404);
-        }
+    public UserDTO get(@PathVariable("id") int id) throws UserNotFoundException {
+        return this.userService.getByName(id);
     }
 }
