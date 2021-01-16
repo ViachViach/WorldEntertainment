@@ -1,6 +1,7 @@
 package com.world.entertainment.worldentertainment.service;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
+import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -18,12 +19,11 @@ public class UserService {
         return this.users;
     }
 
-    public UserDTO getByName(int id) throws ClassNotFoundException {
-
+    public UserDTO getByName(int id) {
         try {
             return this.users.get(id);
         } catch (IndexOutOfBoundsException e) {
-            throw new ClassNotFoundException("User not found");
+            throw new UserNotFoundException("User not found", e);
         }
     }
 }
