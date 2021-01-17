@@ -1,11 +1,7 @@
 package com.world.entertainment.worldentertainment.dto;
 
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.emitter.Emitable;
-import org.yaml.snakeyaml.nodes.Tag;
-import org.yaml.snakeyaml.resolver.Resolver;
-
 import java.io.Serializable;
+
 
 final public class UserDTO implements Serializable {
 

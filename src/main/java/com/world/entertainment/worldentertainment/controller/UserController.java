@@ -1,8 +1,8 @@
 package com.world.entertainment.worldentertainment.controller;
 
+import com.world.entertainment.worldentertainment.dao.UserDAO;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
 import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
-import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +13,30 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserDAO userDAO;
 
-    @GetMapping(value = "/get")
+    @GetMapping(value = "/")
     public List<UserDTO> get() {
-        return this.userService.getAll();
+        return userDAO.getAll();
     }
 
-    @GetMapping(value = "/get/{id}")
+    @GetMapping(value = "/{id}")
     public UserDTO get(@PathVariable("id") int id) throws UserNotFoundException {
-        return this.userService.getByName(id);
+        return userDAO.getById(id);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void delete(@PathVariable("id") int id) {
+
+    }
+
+    @PostMapping()
+    public void create(@ModelAttribute("user") UserDTO userDTO) {
+
+    }
+
+    @PutMapping(value = "/{id}")
+    public void update(@PathVariable("id") int id) {
+
     }
 }
