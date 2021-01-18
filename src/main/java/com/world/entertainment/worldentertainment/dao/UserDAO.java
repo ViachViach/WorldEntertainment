@@ -1,7 +1,6 @@
 package com.world.entertainment.worldentertainment.dao;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.entity.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -24,6 +23,10 @@ public class UserDAO {
     }
 
     public void edit(int id) {
+
+    }
+
+    public void create(UserDTO userDTO) {
 
     }
 }

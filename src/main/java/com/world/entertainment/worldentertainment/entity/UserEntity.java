@@ -1,4 +1,4 @@
 package com.world.entertainment.worldentertainment.entity;
 
-public class User {
+public class UserEntity {
 }

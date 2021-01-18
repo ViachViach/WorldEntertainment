@@ -3,9 +3,14 @@ package com.world.entertainment.worldentertainment.controller;
 import com.world.entertainment.worldentertainment.dao.UserDAO;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
 import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -30,9 +35,20 @@ public class UserController {
 
     }
 
-    @PostMapping()
-    public void create(@ModelAttribute("user") UserDTO userDTO) {
+    @PostMapping(
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE}
+    )
+    public void create(@RequestBody @Valid UserDTO userDTO, BindingResult bindingResult) {
+        //TODO ask how to make response
+        //TODO ask about debugging
 
+        if (bindingResult.hasErrors()) {
+            int t = 1;
+        }
+
+
+        userDAO.create(userDTO);
     }
 
     @PutMapping(value = "/{id}")

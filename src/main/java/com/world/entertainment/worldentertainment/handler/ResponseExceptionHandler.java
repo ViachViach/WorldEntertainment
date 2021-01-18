@@ -1,4 +1,4 @@
-package com.world.entertainment.worldentertainment.controller;
+package com.world.entertainment.worldentertainment.handler;
 
 import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
 import org.slf4j.Logger;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.util.function.BiFunction;
 
 @ControllerAdvice
-public class ResponseExceptionHandlers extends ResponseEntityExceptionHandler {
+public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ResponseExceptionHandlers.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResponseExceptionHandler.class);
     private static final BiFunction<String, Throwable, String> GENERATE_EXCEPTION_MESSAGE =
             (responsePhrase, throwable) -> responsePhrase + ": " + throwable.getMessage();
 
