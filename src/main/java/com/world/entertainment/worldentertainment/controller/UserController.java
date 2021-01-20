@@ -1,16 +1,12 @@
 package com.world.entertainment.worldentertainment.controller;
 
-import com.world.entertainment.worldentertainment.dao.UserDAO;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
 import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,16 +14,16 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserDAO userDAO;
+    private UserService userService;
 
     @GetMapping(value = "/")
     public List<UserDTO> get() {
-        return userDAO.getAll();
+        return userService.getAll();
     }
 
     @GetMapping(value = "/{id}")
     public UserDTO get(@PathVariable("id") int id) throws UserNotFoundException {
-        return userDAO.getById(id);
+        return userService.getById(id);
     }
 
     @DeleteMapping(value = "/{id}")
@@ -39,20 +35,12 @@ public class UserController {
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE}
     )
-    public void create(@RequestBody @Valid UserDTO userDTO, BindingResult bindingResult) {
-        //TODO ask how to make response
-        //TODO ask about debugging
+    public void create(@RequestBody UserDTO userDTO) {
 
-        if (bindingResult.hasErrors()) {
-            int t = 1;
-        }
-
-
-        userDAO.create(userDTO);
     }
 
     @PutMapping(value = "/{id}")
-    public void update(@PathVariable("id") int id) {
+    public void update(@PathVariable("id") int id, @RequestBody UserDTO userDTO) {
 
     }
 }

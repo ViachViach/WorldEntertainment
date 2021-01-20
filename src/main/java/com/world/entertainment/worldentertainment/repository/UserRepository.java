@@ -1,10 +1,7 @@
 package com.world.entertainment.worldentertainment.repository;
 
 import com.world.entertainment.worldentertainment.entity.UserEntity;
+import org.springframework.data.repository.CrudRepository;
 
-public class UserRepository {
-
-    public UserEntity findById(int id) {
-        return new UserEntity();
-    }
+public interface UserRepository extends CrudRepository<UserEntity, Integer> {
 }

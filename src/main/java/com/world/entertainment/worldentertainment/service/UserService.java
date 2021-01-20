@@ -1,29 +1,38 @@
 package com.world.entertainment.worldentertainment.service;
 
+import com.world.entertainment.worldentertainment.adapter.UserAdapter;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
+import com.world.entertainment.worldentertainment.entity.UserEntity;
+import com.world.entertainment.worldentertainment.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
+import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class UserService {
 
-    private List<UserDTO> users = Arrays.asList(
-            new UserDTO("test", "test"),
-            new UserDTO("test", "test")
-    );
+    @Autowired
+    private UserRepository userRepository;
 
-    public List<UserDTO> getAll() {
-        return this.users;
+    public UserDTO getById(int id) {
+        UserEntity userEntity = userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        UserAdapter userAdapter = new UserAdapter(userEntity);
+
+        return userAdapter.createDto();
     }
 
-    public UserDTO getByName(int id) {
-        try {
-            return this.users.get(id);
-        } catch (IndexOutOfBoundsException e) {
-            throw new UserNotFoundException("User not found", e);
-        }
+    public List<UserDTO> getAll() {
+        List<UserEntity> users = new ArrayList<>();
+        List<UserDTO> result = new ArrayList<>();
+        userRepository.findAll().forEach(users::add);
+        users.forEach((entity)-> {
+            UserAdapter userAdapter = new UserAdapter(entity);
+            result.add(userAdapter.createDto());
+        });
+
+        return result;
     }
 }
