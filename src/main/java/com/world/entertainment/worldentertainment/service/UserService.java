@@ -25,9 +25,11 @@ public class UserService {
     }
 
     public List<UserDTO> getAll() {
-        List<UserEntity> users = new ArrayList<>();
-        List<UserDTO> result = new ArrayList<>();
+        var users = new ArrayList<UserEntity>();
+        var result = new ArrayList<UserDTO>();
+
         userRepository.findAll().forEach(users::add);
+
         users.forEach((entity)-> {
             UserAdapter userAdapter = new UserAdapter(entity);
             result.add(userAdapter.createDto());
