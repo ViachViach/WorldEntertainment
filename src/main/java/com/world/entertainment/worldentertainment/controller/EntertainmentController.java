@@ -35,7 +35,7 @@ public class EntertainmentController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void delete(int id) {
+    public void delete(@PathVariable int id) {
         entertainmentRepository.delete(id);
     }
 
