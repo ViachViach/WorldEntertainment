@@ -9,6 +9,8 @@ import javax.validation.constraints.Size;
 @Table(name = "user", schema = "public")
 public class UserEntity {
 
+    //TODO Tell me pls why all database delete if I relaunch project.
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,7 +22,6 @@ public class UserEntity {
     @NotNull
     @Email
     private String email;
-
 
     public int getId() {
         return id;

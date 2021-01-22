@@ -1,6 +1,7 @@
 package com.world.entertainment.worldentertainment.handler;
 
-import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
+import com.world.entertainment.worldentertainment.dto.JsonException;
+import com.world.entertainment.worldentertainment.exception.RestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -36,11 +37,10 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
                 .body(GENERATE_EXCEPTION_MESSAGE.apply(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e));
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
-    protected ResponseEntity<String> handleException(UserNotFoundException e) {
+    @ExceptionHandler(RestException.class)
+    protected ResponseEntity<Object> handleException(RestException e) {
         LOG.error(e.getMessage(), e);
-        return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(GENERATE_EXCEPTION_MESSAGE.apply(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e));
+        JsonException jsonException = new JsonException(e.getMessage(), HttpStatus.BAD_REQUEST.value());
+        return new ResponseEntity<>(jsonException, HttpStatus.BAD_REQUEST);
     }
 }

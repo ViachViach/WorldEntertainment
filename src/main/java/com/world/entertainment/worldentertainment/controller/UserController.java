@@ -1,8 +1,8 @@
 package com.world.entertainment.worldentertainment.controller;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.exception.UserNotFoundException;
 
+import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    public UserDTO get(@PathVariable("id") int id) throws UserNotFoundException {
+    public UserDTO get(@PathVariable("id") int id) throws EntityNotFoundException {
         return userService.getById(id);
     }
 

@@ -3,11 +3,11 @@ package com.world.entertainment.worldentertainment.service;
 import com.world.entertainment.worldentertainment.adapter.UserAdapter;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
 import com.world.entertainment.worldentertainment.entity.UserEntity;
+import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +18,9 @@ public class UserService {
     private UserRepository userRepository;
 
     public UserDTO getById(int id) {
-        UserEntity userEntity = userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        UserEntity userEntity = userRepository.findById(id).orElseThrow(()
+                -> new EntityNotFoundException(String.format("User by id %d not found", id))
+        );
         UserAdapter userAdapter = new UserAdapter(userEntity);
 
         return userAdapter.createDto();
