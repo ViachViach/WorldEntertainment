@@ -1,5 +1,7 @@
 package com.world.entertainment.worldentertainment.entity;
 
+import com.world.entertainment.worldentertainment.model.Role;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -8,8 +10,6 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "user", schema = "public")
 public class UserEntity {
-
-    //TODO Tell me pls why all database delete if I relaunch project.
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,10 @@ public class UserEntity {
     @NotNull
     @Email
     private String email;
+
+    private String password;
+
+    private Role role;
 
     public int getId() {
         return id;

@@ -4,12 +4,13 @@ import com.world.entertainment.worldentertainment.dto.UserDTO;
 
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.service.UserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Api(tags = "User")
 @RequestMapping("/user/v1")
 public class UserController {
 
@@ -31,10 +32,7 @@ public class UserController {
 
     }
 
-    @PostMapping(
-            consumes = {MediaType.APPLICATION_JSON_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE}
-    )
+    @PostMapping()
     public void create(@RequestBody UserDTO userDTO) {
 
     }
