@@ -33,12 +33,16 @@ public class JwtTokenFilter extends GenericFilterBean {
     ) throws IOException, ServletException {
         var token = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest);
         try {
-            if (token != null && jwtTokenProvider.validateToken(token)) {
-                Authentication authentication = jwtTokenProvider.getAuthentication(token);
-                if (authentication != null) {
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                }
+            if (token == null || !jwtTokenProvider.validateToken(token)) {
+                return;
             }
+
+            Authentication authentication = jwtTokenProvider.getAuthentication(token);
+            if (authentication == null) {
+                return;
+            }
+            
+            SecurityContextHolder.getContext().setAuthentication(authentication);
 
         } catch (JwtAuthenticationException e) {
             SecurityContextHolder.clearContext();
