@@ -1,4 +1,4 @@
-package com.world.entertainment.worldentertainment.controller;
+package com.world.entertainment.worldentertainment.controller.v1;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @Api(tags = "User")
-@RequestMapping("/user/v1")
+@RequestMapping("/api/v1/user")
 public class UserController {
 
     @Autowired

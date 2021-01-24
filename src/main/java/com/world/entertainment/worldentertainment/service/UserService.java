@@ -6,6 +6,8 @@ import com.world.entertainment.worldentertainment.entity.UserEntity;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -38,5 +40,17 @@ public class UserService {
         });
 
         return result;
+    }
+
+    public UserDetails createUserDetails(UserEntity user) {
+        return new User(
+                user.getEmail(),
+                user.getPassword(),
+                user.getDeleteAt() == null && user.isActive(),
+                user.getDeleteAt() == null && user.isActive(),
+                user.getDeleteAt() == null && user.isActive(),
+                user.getDeleteAt() == null && user.isActive(),
+                user.getRole().authorities()
+        );
     }
 }
