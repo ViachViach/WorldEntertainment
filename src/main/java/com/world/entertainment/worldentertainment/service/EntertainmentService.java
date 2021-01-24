@@ -14,8 +14,12 @@ import java.util.List;
 @Component
 public class EntertainmentService {
 
+    private final EntertainmentRepository entertainmentRepository;
+
     @Autowired
-    public EntertainmentRepository entertainmentRepository;
+    public EntertainmentService(EntertainmentRepository entertainmentRepository) {
+        this.entertainmentRepository = entertainmentRepository;
+    }
 
     public void delete(int id) {
 
@@ -25,7 +29,7 @@ public class EntertainmentService {
         entertainment
                 .setDateDelete(now)
                 .setDateUpdate(now)
-                ;
+        ;
 
         entertainmentRepository.save(entertainment);
     }
@@ -38,7 +42,7 @@ public class EntertainmentService {
         entertainment
                 .setName(entertainmentDTO.getName())
                 .setDateUpdate(now)
-                ;
+        ;
 
         entertainmentRepository.save(entertainment);
     }
@@ -52,7 +56,7 @@ public class EntertainmentService {
                 .setName(entertainmentDTO.getName())
                 .setDateUpdate(now)
                 .setDateCreate(now)
-                ;
+        ;
 
         entertainmentRepository.save(entertainment);
     }
@@ -62,7 +66,7 @@ public class EntertainmentService {
 
         return new EntertainmentDTO()
                 .setName(entertainment.getName())
-                ;
+        ;
     }
 
     public List<EntertainmentDTO> getAll() {
@@ -82,6 +86,6 @@ public class EntertainmentService {
         return entertainmentRepository
                 .findById(id)
                 .orElseThrow(EntityNotFoundException::new)
-                ;
+        ;
     }
 }

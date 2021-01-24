@@ -12,6 +12,8 @@ final public class UserDTO implements Serializable {
 
     private String email;
 
+    private String password;
+
     public String getName() {
         return name;
     }
@@ -27,6 +29,15 @@ final public class UserDTO implements Serializable {
 
     public UserDTO setEmail(String email) {
         this.email = email;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public UserDTO setPassword(String password) {
+        this.password = password;
         return this;
     }
 }

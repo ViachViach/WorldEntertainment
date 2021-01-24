@@ -20,8 +20,12 @@ import java.util.List;
 )
 public class EntertainmentController {
 
+    private final EntertainmentService entertainmentRepository;
+
     @Autowired
-    EntertainmentService entertainmentRepository;
+    public EntertainmentController(EntertainmentService entertainmentRepository) {
+        this.entertainmentRepository = entertainmentRepository;
+    }
 
     @GetMapping(value = "/{id}", consumes = MediaType.ALL_VALUE)
     @PreAuthorize("hasAuthority('read')")
