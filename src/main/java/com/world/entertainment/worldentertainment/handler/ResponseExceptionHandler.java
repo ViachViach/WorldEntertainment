@@ -40,7 +40,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(RestException.class)
     protected ResponseEntity<Object> handleException(RestException e) {
         LOG.error(e.getMessage(), e);
-        JsonException jsonException = new JsonException(e.getMessage(), HttpStatus.BAD_REQUEST.value());
-        return new ResponseEntity<>(jsonException, HttpStatus.BAD_REQUEST);
+        JsonException jsonException = new JsonException(e.getMessage(), e.getStatus().value());
+        return new ResponseEntity<>(jsonException, e.getStatus());
     }
 }
