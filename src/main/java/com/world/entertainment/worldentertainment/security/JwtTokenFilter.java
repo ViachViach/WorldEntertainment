@@ -34,14 +34,16 @@ public class JwtTokenFilter extends GenericFilterBean {
         var token = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest);
         try {
             if (token == null || !jwtTokenProvider.validateToken(token)) {
+                filterChain.doFilter(servletRequest, servletResponse);
                 return;
             }
 
             Authentication authentication = jwtTokenProvider.getAuthentication(token);
             if (authentication == null) {
+                filterChain.doFilter(servletRequest, servletResponse);
                 return;
             }
-            
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
         } catch (JwtAuthenticationException e) {
