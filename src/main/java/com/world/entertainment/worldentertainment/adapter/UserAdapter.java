@@ -1,20 +1,20 @@
 package com.world.entertainment.worldentertainment.adapter;
 
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.entity.UserEntity;
+import com.world.entertainment.worldentertainment.entity.User;
 
 public class UserAdapter {
 
-    private final UserEntity userEntity;
+    private final User user;
 
-    public UserAdapter (UserEntity userEntity) {
-        this.userEntity = userEntity;
+    public UserAdapter (User user) {
+        this.user = user;
     }
 
     public UserDTO createDto() {
         return new UserDTO()
-                .setEmail(userEntity.getEmail())
-                .setName(userEntity.getName())
+                .setEmail(user.getEmail())
+                .setName(user.getName())
         ;
     }
 }

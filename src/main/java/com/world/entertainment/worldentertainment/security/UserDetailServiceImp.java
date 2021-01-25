@@ -1,9 +1,8 @@
 package com.world.entertainment.worldentertainment.security;
 
-import com.world.entertainment.worldentertainment.entity.UserEntity;
+import com.world.entertainment.worldentertainment.entity.User;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,8 +29,8 @@ public class UserDetailServiceImp implements UserDetailsService {
         return createUserDetails(user);
     }
 
-    public UserDetails createUserDetails(UserEntity user) {
-        return new User(
+    public UserDetails createUserDetails(User user) {
+        return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
                 user.getDeleteAt() == null && user.isActive(),

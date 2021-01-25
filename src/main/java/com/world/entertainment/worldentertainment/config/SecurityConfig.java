@@ -1,7 +1,5 @@
 package com.world.entertainment.worldentertainment.config;
 
-import com.world.entertainment.worldentertainment.security.UserDetailServiceImp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -37,7 +35,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui/",
                         "/swagger-ui/**",
                         "/webjars/**",
-                        "/api/auth/login").permitAll()
+                        "/api/auth/login")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .apply(jwtConfigure);

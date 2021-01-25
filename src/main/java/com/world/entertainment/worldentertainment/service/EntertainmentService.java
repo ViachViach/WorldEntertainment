@@ -1,7 +1,7 @@
 package com.world.entertainment.worldentertainment.service;
 
 import com.world.entertainment.worldentertainment.dto.EntertainmentDTO;
-import com.world.entertainment.worldentertainment.entity.EntertainmentEntity;
+import com.world.entertainment.worldentertainment.entity.Entertainment;
 import com.world.entertainment.worldentertainment.repository.EntertainmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,7 +50,7 @@ public class EntertainmentService {
     public void create(EntertainmentDTO entertainmentDTO) {
 
         var now = new Date();
-        var entertainment = new EntertainmentEntity();
+        var entertainment = new Entertainment();
 
         entertainment
                 .setName(entertainmentDTO.getName())
@@ -71,7 +71,7 @@ public class EntertainmentService {
 
     public List<EntertainmentDTO> getAll() {
         var entertainmentDTOs = new ArrayList<EntertainmentDTO>();
-        var entertainments = new ArrayList<EntertainmentEntity>();
+        var entertainments = new ArrayList<Entertainment>();
 
         entertainmentRepository.findAll().forEach(entertainments::add);
 
@@ -82,7 +82,7 @@ public class EntertainmentService {
         return entertainmentDTOs;
     }
 
-    private EntertainmentEntity geEntityById(int id) {
+    private Entertainment geEntityById(int id) {
         return entertainmentRepository
                 .findById(id)
                 .orElseThrow(EntityNotFoundException::new)

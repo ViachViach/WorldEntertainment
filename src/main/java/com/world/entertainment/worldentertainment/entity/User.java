@@ -9,8 +9,8 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-@Table(name = "user", schema = "public")
-public class UserEntity {
+@Table(schema = "public")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +41,7 @@ public class UserEntity {
         return id;
     }
 
-    public UserEntity setId(int id) {
+    public User setId(int id) {
         this.id = id;
         return this;
     }
@@ -50,7 +50,7 @@ public class UserEntity {
         return name;
     }
 
-    public UserEntity setName(String name) {
+    public User setName(String name) {
         this.name = name;
         return this;
     }
@@ -59,7 +59,7 @@ public class UserEntity {
         return email;
     }
 
-    public UserEntity setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -68,7 +68,7 @@ public class UserEntity {
         return password;
     }
 
-    public UserEntity setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
         return this;
     }
@@ -77,7 +77,7 @@ public class UserEntity {
         return role;
     }
 
-    public UserEntity setRole(Role role) {
+    public User setRole(Role role) {
         this.role = role;
         return this;
     }
@@ -86,7 +86,7 @@ public class UserEntity {
         return isActive;
     }
 
-    public UserEntity setActive(boolean active) {
+    public User setActive(boolean active) {
         isActive = active;
         return this;
     }
@@ -95,7 +95,7 @@ public class UserEntity {
         return createAt;
     }
 
-    public UserEntity setCreateAt(Date createAt) {
+    public User setCreateAt(Date createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -104,7 +104,7 @@ public class UserEntity {
         return updateAt;
     }
 
-    public UserEntity setUpdateAt(Date updateAt) {
+    public User setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -113,7 +113,7 @@ public class UserEntity {
         return deleteAt;
     }
 
-    public UserEntity setDeleteAt(Date deleteAt) {
+    public User setDeleteAt(Date deleteAt) {
         this.deleteAt = deleteAt;
         return this;
     }

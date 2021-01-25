@@ -2,6 +2,7 @@ package com.world.entertainment.worldentertainment.security;
 
 import com.world.entertainment.worldentertainment.exception.JwtAuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,9 @@ public class JwtTokenFilter extends GenericFilterBean {
 
     private final JwtTokenProvider jwtTokenProvider;
 
+    @Value("${jwt.prefix}")
+    private String tokenPrefix;
+
     @Autowired
     public JwtTokenFilter(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
@@ -32,8 +36,16 @@ public class JwtTokenFilter extends GenericFilterBean {
             FilterChain filterChain
     ) throws IOException, ServletException {
         var token = jwtTokenProvider.resolveToken((HttpServletRequest) servletRequest);
+
+        if (!checkPrefixBearer(token)) {
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+        }
+
+        token = token.replace(tokenPrefix, "").trim();
+
         try {
-            if (token == null || !jwtTokenProvider.validateToken(token)) {
+            if (!jwtTokenProvider.validateToken(token)) {
                 filterChain.doFilter(servletRequest, servletResponse);
                 return;
             }
@@ -52,5 +64,9 @@ public class JwtTokenFilter extends GenericFilterBean {
             throw new JwtAuthenticationException("Jwt token is expired or invalid");
         }
         filterChain.doFilter(servletRequest, servletResponse);
+    }
+
+    private boolean checkPrefixBearer(String token) {
+        return token != null && token.startsWith(tokenPrefix);
     }
 }

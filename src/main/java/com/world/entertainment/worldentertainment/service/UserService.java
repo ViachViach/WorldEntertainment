@@ -4,7 +4,7 @@ import com.world.entertainment.worldentertainment.adapter.UserAdapter;
 import com.world.entertainment.worldentertainment.dto.TokenDTO;
 import com.world.entertainment.worldentertainment.dto.UserAuthDTO;
 import com.world.entertainment.worldentertainment.dto.UserDTO;
-import com.world.entertainment.worldentertainment.entity.UserEntity;
+import com.world.entertainment.worldentertainment.entity.User;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.exception.JwtAuthenticationException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
@@ -12,8 +12,6 @@ import com.world.entertainment.worldentertainment.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -40,16 +38,16 @@ public class UserService {
     }
 
     public UserDTO getById(int id) {
-        UserEntity userEntity = userRepository.findById(id).orElseThrow(()
+        var user = userRepository.findById(id).orElseThrow(()
                 -> new EntityNotFoundException(String.format("User by id %d not found", id))
         );
-        UserAdapter userAdapter = new UserAdapter(userEntity);
+        UserAdapter userAdapter = new UserAdapter(user);
 
         return userAdapter.createDto();
     }
 
     public List<UserDTO> getAll() {
-        var users = new ArrayList<UserEntity>();
+        var users = new ArrayList<User>();
         var result = new ArrayList<UserDTO>();
 
         userRepository.findAll().forEach(users::add);

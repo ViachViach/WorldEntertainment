@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "entertainment", schema = "public")
-public class EntertainmentEntity {
+@Table(schema = "public")
+public class Entertainment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class EntertainmentEntity {
         return id;
     }
 
-    public EntertainmentEntity setId(int id) {
+    public Entertainment setId(int id) {
         this.id = id;
         return this;
     }
@@ -32,7 +32,7 @@ public class EntertainmentEntity {
         return name;
     }
 
-    public EntertainmentEntity setName(String name) {
+    public Entertainment setName(String name) {
         this.name = name;
         return this;
     }
@@ -41,7 +41,7 @@ public class EntertainmentEntity {
         return dateCreate;
     }
 
-    public EntertainmentEntity setDateCreate(Date dateCreate) {
+    public Entertainment setDateCreate(Date dateCreate) {
         this.dateCreate = dateCreate;
         return this;
     }
@@ -50,7 +50,7 @@ public class EntertainmentEntity {
         return dateUpdate;
     }
 
-    public EntertainmentEntity setDateUpdate(Date dateUpdate) {
+    public Entertainment setDateUpdate(Date dateUpdate) {
         this.dateUpdate = dateUpdate;
         return this;
     }
@@ -59,7 +59,7 @@ public class EntertainmentEntity {
         return dateDelete;
     }
 
-    public EntertainmentEntity setDateDelete(Date dateDelete) {
+    public Entertainment setDateDelete(Date dateDelete) {
         this.dateDelete = dateDelete;
         return this;
     }
