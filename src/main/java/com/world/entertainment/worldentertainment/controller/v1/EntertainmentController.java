@@ -1,9 +1,10 @@
 package com.world.entertainment.worldentertainment.controller.v1;
 
-import com.world.entertainment.worldentertainment.dto.EntertainmentDTO;
+import com.world.entertainment.worldentertainment.dto.controller.CreateEntertainment;
+import com.world.entertainment.worldentertainment.dto.controller.EntertainmentResponse;
+import com.world.entertainment.worldentertainment.dto.controller.UpdateEntertainment;
 import com.world.entertainment.worldentertainment.service.EntertainmentService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,25 +30,25 @@ public class EntertainmentController {
 
     @GetMapping(value = "/{id}", consumes = MediaType.ALL_VALUE)
     @PreAuthorize("hasAuthority('read')")
-    public EntertainmentDTO get(@PathVariable int id) {
+    public EntertainmentResponse get(@PathVariable int id) {
         return entertainmentRepository.getById(id);
     }
 
     @GetMapping(value = "/", consumes = MediaType.ALL_VALUE)
     @PreAuthorize("hasAuthority('read')")
-    public List<EntertainmentDTO> getAll() {
+    public List<EntertainmentResponse> getAll() {
         return entertainmentRepository.getAll();
     }
 
     @PostMapping(value = "/")
     @PreAuthorize("hasAuthority('write')")
-    public void create(@RequestBody EntertainmentDTO body) {
+    public void create(@RequestBody CreateEntertainment body) {
         entertainmentRepository.create(body);
     }
 
     @PutMapping(value = "/")
     @PreAuthorize("hasAuthority('write')")
-    public void update(@RequestBody EntertainmentDTO body, int id) {
+    public void update(@RequestBody UpdateEntertainment body, int id) {
         entertainmentRepository.update(body, id);
     }
 

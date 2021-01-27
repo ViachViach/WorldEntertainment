@@ -1,6 +1,8 @@
 package com.world.entertainment.worldentertainment.service;
 
-import com.world.entertainment.worldentertainment.dto.EntertainmentDTO;
+import com.world.entertainment.worldentertainment.dto.controller.CreateEntertainment;
+import com.world.entertainment.worldentertainment.dto.controller.EntertainmentResponse;
+import com.world.entertainment.worldentertainment.dto.controller.UpdateEntertainment;
 import com.world.entertainment.worldentertainment.entity.Entertainment;
 import com.world.entertainment.worldentertainment.repository.EntertainmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,59 +26,45 @@ public class EntertainmentService {
     public void delete(int id) {
 
         var now = new Date();
-        var entertainment = geEntityById(id);
-
-        entertainment
-                .setDateDelete(now)
-                .setDateUpdate(now)
-        ;
+        var entertainment = geEntityById(id).setDateDelete(now).setDateUpdate(now);
 
         entertainmentRepository.save(entertainment);
     }
 
-    public void update(EntertainmentDTO entertainmentDTO, int id) {
+    public void update(UpdateEntertainment updateEntertainment, int id) {
 
         var now = new Date();
-        var entertainment = geEntityById(id);
-
-        entertainment
-                .setName(entertainmentDTO.getName())
-                .setDateUpdate(now)
-        ;
+        var entertainment = geEntityById(id).setName(updateEntertainment.getName()).setDateUpdate(now);
 
         entertainmentRepository.save(entertainment);
     }
 
-    public void create(EntertainmentDTO entertainmentDTO) {
+    public void create(CreateEntertainment entertainmentDTO) {
 
         var now = new Date();
-        var entertainment = new Entertainment();
-
-        entertainment
+        var entertainment = new Entertainment()
                 .setName(entertainmentDTO.getName())
                 .setDateUpdate(now)
-                .setDateCreate(now)
-        ;
+                .setDateCreate(now);
 
         entertainmentRepository.save(entertainment);
     }
 
-    public EntertainmentDTO getById(int id) {
+    public EntertainmentResponse getById(int id) {
         var entertainment = geEntityById(id);
 
-        return new EntertainmentDTO()
-                .setName(entertainment.getName())
-        ;
+        return new EntertainmentResponse(
+                entertainment.getName()
+        );
     }
 
-    public List<EntertainmentDTO> getAll() {
-        var entertainmentDTOs = new ArrayList<EntertainmentDTO>();
+    public List<EntertainmentResponse> getAll() {
+        var entertainmentDTOs = new ArrayList<EntertainmentResponse>();
         var entertainments = new ArrayList<Entertainment>();
 
         entertainmentRepository.findAll().forEach(entertainments::add);
-
         entertainments.forEach((entity) -> {
-            entertainmentDTOs.add(new EntertainmentDTO().setName(entity.getName()));
+            entertainmentDTOs.add(new EntertainmentResponse(entity.getName()));
         });
 
         return entertainmentDTOs;

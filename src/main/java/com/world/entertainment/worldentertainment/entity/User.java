@@ -1,6 +1,6 @@
 package com.world.entertainment.worldentertainment.entity;
 
-import com.world.entertainment.worldentertainment.model.Role;
+import com.world.entertainment.worldentertainment.permition.Role;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

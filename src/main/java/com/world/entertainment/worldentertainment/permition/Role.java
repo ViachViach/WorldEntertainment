@@ -1,4 +1,4 @@
-package com.world.entertainment.worldentertainment.model;
+package com.world.entertainment.worldentertainment.permition;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

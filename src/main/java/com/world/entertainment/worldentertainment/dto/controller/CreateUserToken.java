@@ -1,6 +1,6 @@
-package com.world.entertainment.worldentertainment.dto;
+package com.world.entertainment.worldentertainment.dto.controller;
 
-final public class UserAuthDTO {
+final public class CreateUserToken {
 
     private String email;
 
@@ -10,7 +10,7 @@ final public class UserAuthDTO {
         return email;
     }
 
-    public UserAuthDTO setEmail(String email) {
+    public CreateUserToken setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -19,7 +19,7 @@ final public class UserAuthDTO {
         return password;
     }
 
-    public UserAuthDTO setPassword(String password) {
+    public CreateUserToken setPassword(String password) {
         this.password = password;
         return this;
     }

@@ -1,6 +1,6 @@
 package com.world.entertainment.worldentertainment.handler;
 
-import com.world.entertainment.worldentertainment.dto.JsonException;
+import com.world.entertainment.worldentertainment.dto.exception.JsonException;
 import com.world.entertainment.worldentertainment.exception.RestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

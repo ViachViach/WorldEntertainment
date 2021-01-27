@@ -1,9 +1,8 @@
 package com.world.entertainment.worldentertainment.service;
 
-import com.world.entertainment.worldentertainment.adapter.UserAdapter;
-import com.world.entertainment.worldentertainment.dto.TokenDTO;
-import com.world.entertainment.worldentertainment.dto.UserAuthDTO;
-import com.world.entertainment.worldentertainment.dto.UserDTO;
+import com.world.entertainment.worldentertainment.dto.controller.CreateUserToken;
+import com.world.entertainment.worldentertainment.dto.controller.CreateToken;
+import com.world.entertainment.worldentertainment.dto.controller.UserResponse;
 import com.world.entertainment.worldentertainment.entity.User;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.exception.JwtAuthenticationException;
@@ -37,41 +36,41 @@ public class UserService {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
-    public UserDTO getById(int id) {
-        var user = userRepository.findById(id).orElseThrow(()
+    public UserResponse getById(int id) {
+        var entity = userRepository.findById(id).orElseThrow(()
                 -> new EntityNotFoundException(String.format("User by id %d not found", id))
         );
-        UserAdapter userAdapter = new UserAdapter(user);
 
-        return userAdapter.createDto();
+        return new UserResponse(
+                entity.getName(),
+                entity.getEmail()
+        );
     }
 
-    public List<UserDTO> getAll() {
+    public List<UserResponse> getAll() {
         var users = new ArrayList<User>();
-        var result = new ArrayList<UserDTO>();
+        var result = new ArrayList<UserResponse>();
 
         userRepository.findAll().forEach(users::add);
-
         users.forEach((entity)-> {
-            UserAdapter userAdapter = new UserAdapter(entity);
-            result.add(userAdapter.createDto());
+            var userResponse = new UserResponse(
+                    entity.getName(),
+                    entity.getEmail()
+            );
+            result.add(userResponse);
         });
 
         return result;
     }
 
-    public TokenDTO authenticate(UserAuthDTO userAuthDTO) throws JwtAuthenticationException {
+    public CreateToken authenticate(CreateUserToken createUserToken) throws JwtAuthenticationException {
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(userAuthDTO.getEmail(), userAuthDTO.getPassword())
+                new UsernamePasswordAuthenticationToken(createUserToken.getEmail(), createUserToken.getPassword())
         );
-        var user = userRepository.findByEmail(userAuthDTO.getEmail())
+        var user = userRepository.findByEmail(createUserToken.getEmail())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
-        var token = jwtTokenProvider.createToken(userAuthDTO.getEmail(), user.getRole().name());
+        var token = jwtTokenProvider.createToken(createUserToken.getEmail(), user.getRole().name());
 
-        var result = new TokenDTO();
-        result.setEmail(userAuthDTO.getEmail());
-        result.setToken(token);
-
-        return result;
+        return new CreateToken(token);
     }
 }

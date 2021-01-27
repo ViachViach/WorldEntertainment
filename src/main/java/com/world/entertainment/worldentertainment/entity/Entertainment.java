@@ -13,6 +13,11 @@ public class Entertainment {
 
     private String name;
 
+    @ManyToOne(targetEntity = Customer.class)
+    private Customer customer;
+
+    private boolean isActive;
+
     private Date dateCreate;
 
     private Date dateUpdate;
@@ -61,6 +66,24 @@ public class Entertainment {
 
     public Entertainment setDateDelete(Date dateDelete) {
         this.dateDelete = dateDelete;
+        return this;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Entertainment setCustomer(Customer customer) {
+        this.customer = customer;
+        return this;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public Entertainment setActive(boolean active) {
+        isActive = active;
         return this;
     }
 }

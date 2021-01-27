@@ -1,10 +1,10 @@
-package com.world.entertainment.worldentertainment.dto;
+package com.world.entertainment.worldentertainment.dto.controller;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-final public class UserDTO implements Serializable {
+final public class CreateUser implements Serializable {
 
     @NotNull
     @Size(min = 1, max = 30)
@@ -18,7 +18,7 @@ final public class UserDTO implements Serializable {
         return name;
     }
 
-    public UserDTO setName(String name) {
+    public CreateUser setName(String name) {
         this.name = name;
         return this;
     }
@@ -27,7 +27,7 @@ final public class UserDTO implements Serializable {
         return email;
     }
 
-    public UserDTO setEmail(String email) {
+    public CreateUser setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -36,7 +36,7 @@ final public class UserDTO implements Serializable {
         return password;
     }
 
-    public UserDTO setPassword(String password) {
+    public CreateUser setPassword(String password) {
         this.password = password;
         return this;
     }

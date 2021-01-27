@@ -1,7 +1,7 @@
 package com.world.entertainment.worldentertainment.controller.v1;
 
-import com.world.entertainment.worldentertainment.dto.UserDTO;
-
+import com.world.entertainment.worldentertainment.dto.controller.CreateUser;
+import com.world.entertainment.worldentertainment.dto.controller.UserResponse;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.service.UserService;
 import io.swagger.annotations.Api;
@@ -22,12 +22,12 @@ public class UserController {
     }
 
     @GetMapping(value = "/")
-    public List<UserDTO> get() {
+    public List<UserResponse> get() {
         return userService.getAll();
     }
 
     @GetMapping(value = "/{id}")
-    public UserDTO get(@PathVariable("id") int id) throws EntityNotFoundException {
+    public UserResponse get(@PathVariable("id") int id) throws EntityNotFoundException {
         return userService.getById(id);
     }
 
@@ -37,12 +37,12 @@ public class UserController {
     }
 
     @PostMapping()
-    public void create(@RequestBody UserDTO userDTO) {
+    public void create(@RequestBody CreateUser createUser) {
 
     }
 
     @PutMapping(value = "/{id}")
-    public void update(@PathVariable("id") int id, @RequestBody UserDTO userDTO) {
+    public void update(@PathVariable("id") int id, @RequestBody CreateUser createUser) {
 
     }
 }

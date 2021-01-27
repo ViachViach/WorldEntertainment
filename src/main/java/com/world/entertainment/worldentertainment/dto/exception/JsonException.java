@@ -1,4 +1,4 @@
-package com.world.entertainment.worldentertainment.dto;
+package com.world.entertainment.worldentertainment.dto.exception;
 
 final public class JsonException {
 

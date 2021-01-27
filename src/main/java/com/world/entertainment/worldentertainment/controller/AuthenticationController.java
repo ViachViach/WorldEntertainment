@@ -1,7 +1,7 @@
 package com.world.entertainment.worldentertainment.controller;
 
-import com.world.entertainment.worldentertainment.dto.TokenDTO;
-import com.world.entertainment.worldentertainment.dto.UserAuthDTO;
+import com.world.entertainment.worldentertainment.dto.controller.CreateUserToken;
+import com.world.entertainment.worldentertainment.dto.controller.CreateToken;
 import com.world.entertainment.worldentertainment.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.http.MediaType;
@@ -26,7 +26,7 @@ public class AuthenticationController {
     }
 
     @PostMapping(value = "/login")
-    public TokenDTO login(@RequestBody UserAuthDTO request) {
+    public CreateToken login(@RequestBody CreateUserToken request) {
         return userService.authenticate(request);
     }
 }
