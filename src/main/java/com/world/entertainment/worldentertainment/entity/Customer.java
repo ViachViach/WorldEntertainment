@@ -5,23 +5,22 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
+@Table(schema = "public")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-
     @OneToMany(mappedBy = "customer")
     private Set<Entertainment> entertainments;
 
+    private String name;
+    private String email;
+
     private boolean isActive;
-
     private Date dateCreate;
-
     private Date dateUpdate;
-
     private Date dateDelete;
 
     public int getId() {
@@ -40,6 +39,14 @@ public class Customer {
     public Customer setName(String name) {
         this.name = name;
         return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Entertainment> getEntertainments() {
