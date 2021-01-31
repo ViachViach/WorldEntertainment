@@ -55,8 +55,13 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
-    public void update(Integer customerId) {
-        customerRepository.findById(customerId);
+    public void update(Integer customerId, Customer customerUpd) {
+        var customer = customerRepository.findById(customerId).orElseThrow(()
+                -> new EntityNotFoundException(String.format("Customer by id %d not found", customerId)));
+        customer
+                .setEmail(customerUpd.getEmail())
+                .setName(customerUpd.getName());
+        customerRepository.save(customer);
     }
 
     public void deleteById(Integer customerId) {
