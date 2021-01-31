@@ -6,11 +6,13 @@ import com.world.entertainment.worldentertainment.exception.EntityNotFoundExcept
 import com.world.entertainment.worldentertainment.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Service
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
@@ -24,7 +26,7 @@ public class CustomerService {
 
     public CustomerResponse getById(int id) {
         var entity = customerRepository.findById(id).orElseThrow(()
-                -> new EntityNotFoundException(String.format("User by id %d not found", id))
+                -> new EntityNotFoundException(String.format("Customer by id %d not found", id))
         );
 
         return new CustomerResponse(
@@ -47,5 +49,17 @@ public class CustomerService {
         });
 
         return result;
+    }
+
+    public void create(Customer customer) {
+        customerRepository.save(customer);
+    }
+
+    public void update(Integer customerId) {
+        customerRepository.findById(customerId);
+    }
+
+    public void deleteById(Integer customerId) {
+        customerRepository.deleteById(customerId);
     }
 }

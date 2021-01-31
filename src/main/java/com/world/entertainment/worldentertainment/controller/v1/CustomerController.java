@@ -2,6 +2,7 @@ package com.world.entertainment.worldentertainment.controller.v1;
 
 import com.world.entertainment.worldentertainment.dto.controller.CreateCustomer;
 import com.world.entertainment.worldentertainment.dto.controller.CustomerResponse;
+import com.world.entertainment.worldentertainment.entity.Customer;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.service.CustomerService;
 import io.swagger.annotations.Api;
@@ -34,12 +35,12 @@ public class CustomerController {
 
     @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable("id") int id) {
-
+        customerService.deleteById(id);
     }
 
     @PostMapping()
     public void create(@RequestBody CreateCustomer createCustomer) {
-
+        customerService.create(createCustomer.create());
     }
 
     @PutMapping(value = "/{id}")

@@ -45,8 +45,9 @@ public class Customer {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Customer setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public Set<Entertainment> getEntertainments() {
