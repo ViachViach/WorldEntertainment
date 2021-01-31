@@ -12,18 +12,16 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-
     @OneToMany(mappedBy = "customer")
     private Set<Entertainment> entertainments;
 
+    private String name;
+    private String email;
+
     private boolean isActive;
-
-    private Date dateCreate;
-
-    private Date dateUpdate;
-
-    private Date dateDelete;
+    private Date createAt;
+    private Date updateAt;
+    private Date deleteAt;
 
     public int getId() {
         return id;
@@ -40,6 +38,15 @@ public class Customer {
 
     public Customer setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Customer setEmail(String email) {
+        this.email = email;
         return this;
     }
 
@@ -61,30 +68,30 @@ public class Customer {
         return this;
     }
 
-    public Date getDateCreate() {
-        return dateCreate;
+    public Date getCreateAt() {
+        return createAt;
     }
 
-    public Customer setDateCreate(Date dateCreate) {
-        this.dateCreate = dateCreate;
+    public Customer setCreateAt(Date createAt) {
+        this.createAt = createAt;
         return this;
     }
 
-    public Date getDateUpdate() {
-        return dateUpdate;
+    public Date getUpdateAt() {
+        return updateAt;
     }
 
-    public Customer setDateUpdate(Date dateUpdate) {
-        this.dateUpdate = dateUpdate;
+    public Customer setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
         return this;
     }
 
-    public Date getDateDelete() {
-        return dateDelete;
+    public Date getDeleteAt() {
+        return deleteAt;
     }
 
-    public Customer setDateDelete(Date dateDelete) {
-        this.dateDelete = dateDelete;
+    public Customer setDeleteAt(Date deleteAt) {
+        this.deleteAt = deleteAt;
         return this;
     }
 }
