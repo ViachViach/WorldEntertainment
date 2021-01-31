@@ -1,9 +1,12 @@
 package com.world.entertainment.worldentertainment.service;
 
+import com.world.entertainment.worldentertainment.dto.controller.CreateCustomer;
 import com.world.entertainment.worldentertainment.dto.controller.CustomerResponse;
+import com.world.entertainment.worldentertainment.dto.controller.UpdateCustomer;
 import com.world.entertainment.worldentertainment.entity.Customer;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.CustomerRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -51,20 +54,22 @@ public class CustomerService {
         return result;
     }
 
-    public void create(Customer customer) {
+    public void create(CreateCustomer createCustomer) {
+        var modelMapper = new ModelMapper();
+        var customer = modelMapper.map(createCustomer, Customer.class);
         customerRepository.save(customer);
     }
 
-    public void update(Integer customerId, Customer customerUpd) {
+    public void update(int customerId, UpdateCustomer updateCustomer) {
         var customer = customerRepository.findById(customerId).orElseThrow(()
                 -> new EntityNotFoundException(String.format("Customer by id %d not found", customerId)));
         customer
-                .setEmail(customerUpd.getEmail())
-                .setName(customerUpd.getName());
+                .setEmail(updateCustomer.getEmail())
+                .setName(updateCustomer.getName());
         customerRepository.save(customer);
     }
 
-    public void deleteById(Integer customerId) {
+    public void deleteById(int customerId) {
         customerRepository.deleteById(customerId);
     }
 }

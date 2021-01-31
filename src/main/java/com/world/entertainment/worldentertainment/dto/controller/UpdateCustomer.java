@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
-final public class CreateCustomer implements Serializable {
+final public class UpdateCustomer implements Serializable {
 
     @NotNull
     @Size(min = 1, max = 30)
@@ -19,7 +19,7 @@ final public class CreateCustomer implements Serializable {
         return name;
     }
 
-    public CreateCustomer setName(String name) {
+    public UpdateCustomer setName(String name) {
         this.name = name;
         return this;
     }
@@ -28,7 +28,7 @@ final public class CreateCustomer implements Serializable {
         return email;
     }
 
-    public CreateCustomer setEmail(String email) {
+    public UpdateCustomer setEmail(String email) {
         this.email = email;
         return this;
     }
