@@ -19,12 +19,14 @@ import java.util.List;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
     public CustomerService(
-            CustomerRepository customerRepository
-    ) {
+            CustomerRepository customerRepository,
+            ModelMapper modelMapper) {
         this.customerRepository = customerRepository;
+        this.modelMapper = modelMapper;
     }
 
     public CustomerResponse getById(int id) {
@@ -55,7 +57,6 @@ public class CustomerService {
     }
 
     public void create(CreateCustomer createCustomer) {
-        var modelMapper = new ModelMapper();
         var customer = modelMapper.map(createCustomer, Customer.class);
         customerRepository.save(customer);
     }
@@ -63,9 +64,7 @@ public class CustomerService {
     public void update(int customerId, UpdateCustomer updateCustomer) {
         var customer = customerRepository.findById(customerId).orElseThrow(()
                 -> new EntityNotFoundException(String.format("Customer by id %d not found", customerId)));
-        customer
-                .setEmail(updateCustomer.getEmail())
-                .setName(updateCustomer.getName());
+        customer = modelMapper.map(updateCustomer, Customer.class).setId(customerId);
         customerRepository.save(customer);
     }
 
