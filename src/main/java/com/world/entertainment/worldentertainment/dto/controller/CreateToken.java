@@ -9,4 +9,8 @@ final public class CreateToken implements Serializable {
     public CreateToken(String token) {
         this.token = token;
     }
+
+    public String getToken() {
+        return token;
+    }
 }

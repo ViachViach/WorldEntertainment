@@ -9,4 +9,8 @@ final public class EntertainmentResponse implements Serializable {
     public EntertainmentResponse(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }
