@@ -3,6 +3,7 @@ package com.world.entertainment.worldentertainment.security;
 import com.world.entertainment.worldentertainment.entity.User;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
+import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,22 +12,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDetailServiceImp implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
-    public UserDetailServiceImp(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserDetailServiceImp(UserService userService) {
+        this.userService = userService;
     }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        var user = userRepository.findByEmail(email)
-                .orElseThrow(() ->
-                new EntityNotFoundException(
-                        String.format("User by email %s not found", email)
-                )
-        );
-
-        return createUserDetails(user);
+        return createUserDetails(userService.findByEmail(email));
     }
 
     public UserDetails createUserDetails(User user) {

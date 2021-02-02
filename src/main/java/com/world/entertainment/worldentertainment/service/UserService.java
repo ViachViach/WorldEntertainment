@@ -63,12 +63,16 @@ public class UserService {
         return result;
     }
 
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("User by email %s not found", email)));
+    }
+
     public CreateToken authenticate(CreateUserToken createUserToken) throws JwtAuthenticationException {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(createUserToken.getEmail(), createUserToken.getPassword())
         );
-        var user = userRepository.findByEmail(createUserToken.getEmail())
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        var user = findByEmail(createUserToken.getEmail());
         var token = jwtTokenProvider.createToken(createUserToken.getEmail(), user.getRole().name());
 
         return new CreateToken(token);

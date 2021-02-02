@@ -17,11 +17,8 @@ public class Entertainment {
     private Customer customer;
 
     private boolean isActive;
-
     private Date dateCreate;
-
     private Date dateUpdate;
-
     private Date dateDelete;
 
     public int getId() {

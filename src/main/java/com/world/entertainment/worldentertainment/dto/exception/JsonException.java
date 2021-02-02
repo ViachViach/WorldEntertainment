@@ -1,22 +1,24 @@
 package com.world.entertainment.worldentertainment.dto.exception;
 
-final public class JsonException {
+import org.springframework.http.HttpStatus;
 
-    public String message;
+import java.io.Serializable;
 
-    public int code;
+final public class JsonException implements Serializable {
 
-    public JsonException (String message, int code) {
+    private final String message;
+    private final HttpStatus status;
+
+    public JsonException (String message, HttpStatus status) {
         this.message = message;
-        this.code = code;
+        this.status = status;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public JsonException setMessage(String message) {
-        this.message = message;
-        return this;
+    public HttpStatus getStatus() {
+        return status;
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import org.springframework.security.core.AuthenticationException;
 import java.io.IOException;
 import java.util.function.BiFunction;
 
@@ -22,25 +23,34 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     @ExceptionHandler(Exception.class)
-    protected ResponseEntity<String> handleException(Exception e) {
+    protected ResponseEntity<Object> handleException(Exception e) {
         LOG.error(e.getMessage(), e);
-        return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(GENERATE_EXCEPTION_MESSAGE.apply(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e));
+        var jsonException = new JsonException(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return buildResponse(jsonException);
     }
 
     @ExceptionHandler(IOException.class)
-    protected ResponseEntity<String> handleIOException(IOException e) {
+    protected ResponseEntity<Object> handleIOException(IOException e) {
         LOG.error(e.getMessage(), e);
-        return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(GENERATE_EXCEPTION_MESSAGE.apply(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e));
+        var jsonException = new JsonException(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return buildResponse(jsonException);
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    private ResponseEntity<Object> handleNotFoundException(AuthenticationException e) {
+        LOG.error(e.getMessage(), e);
+        var jsonException = new JsonException(e.getMessage(), HttpStatus.NOT_FOUND);
+        return buildResponse(jsonException);
     }
 
     @ExceptionHandler(RestException.class)
-    protected ResponseEntity<Object> handleException(RestException e) {
+    private ResponseEntity<Object> handleRestException(RestException e) {
         LOG.error(e.getMessage(), e);
-        JsonException jsonException = new JsonException(e.getMessage(), e.getStatus().value());
-        return new ResponseEntity<>(jsonException, e.getStatus());
+        var jsonException = new JsonException(e.getMessage(), e.getStatus());
+        return buildResponse(jsonException);
+    }
+
+    private ResponseEntity<Object> buildResponse(JsonException exception) {
+        return new ResponseEntity<>(exception, exception.getStatus());
     }
 }
