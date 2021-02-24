@@ -12,7 +12,7 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(mappedBy = "entertainment")
+    @OneToMany(mappedBy = "country")
     private Set<Entertainment> entertainments;
 
     private String name;
