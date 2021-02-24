@@ -21,10 +21,13 @@ public class UserDetailServiceImp implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         var user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new EntityNotFoundException(String.format("User by email %s not found", email)));
+                .orElseThrow(() ->
+                        new EntityNotFoundException(
+                                String.format("User by email %s not found", email)
+                        )
+                );
 
         return createUserDetails(user);
-
     }
 
     public UserDetails createUserDetails(User user) {
