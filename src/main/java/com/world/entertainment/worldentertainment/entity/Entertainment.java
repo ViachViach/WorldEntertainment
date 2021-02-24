@@ -16,8 +16,8 @@ public class Entertainment {
     @ManyToOne(targetEntity = Customer.class)
     private Customer customer;
 
-    @ManyToOne(targetEntity = Country.class)
-    private Country country;
+    @ManyToOne(targetEntity = City.class)
+    private City city;
 
     private boolean isActive;
     private Date dateCreate;
@@ -78,12 +78,12 @@ public class Entertainment {
         return this;
     }
 
-    public Country getCountry() {
-        return country;
+    public City getCity() {
+        return city;
     }
 
-    public Entertainment setCountry(Country country) {
-        this.country = country;
+    public Entertainment setCity(City city) {
+        this.city = city;
         return this;
     }
 

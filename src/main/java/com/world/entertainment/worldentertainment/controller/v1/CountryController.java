@@ -24,12 +24,12 @@ public class CountryController {
     }
 
     @GetMapping(value = "/")
-    public List<CountryResponse> get() {
+    public List<CountryResponse> getAll() {
         return countryService.getAll();
     }
 
     @GetMapping(value = "/{id}")
-    public CountryResponse get(@PathVariable("id") int id) throws EntityNotFoundException {
+    public CountryResponse getById(@PathVariable("id") int id) throws EntityNotFoundException {
         return countryService.getById(id);
     }
 

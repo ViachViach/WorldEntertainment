@@ -6,17 +6,19 @@ import java.util.Set;
 
 @Entity
 @Table(schema = "public")
-public class Country {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(mappedBy = "country")
-    private Set<City> cities;
+    @OneToMany(mappedBy = "city")
+    private Set<Entertainment> entertainments;
+
+    @ManyToOne(targetEntity = Country.class)
+    private Country country;
 
     private String name;
-    private String code;
 
     private Date createAt;
     private Date updateAt;
@@ -26,7 +28,7 @@ public class Country {
         return id;
     }
 
-    public Country setId(int id) {
+    public City setId(int id) {
         this.id = id;
         return this;
     }
@@ -35,26 +37,17 @@ public class Country {
         return name;
     }
 
-    public Country setName(String name) {
+    public City setName(String name) {
         this.name = name;
         return this;
     }
 
-    public String getCode() {
-        return code;
+    public Set<Entertainment> getEntertainments() {
+        return entertainments;
     }
 
-    public Country setCode(String code) {
-        this.code = code;
-        return this;
-    }
-
-    public Set<City> getCities() {
-        return cities;
-    }
-
-    public Country setCities(Set<City> cities) {
-        this.cities = cities;
+    public City setEntertainments(Set<Entertainment> entertainments) {
+        this.entertainments = entertainments;
         return this;
     }
 
@@ -62,7 +55,7 @@ public class Country {
         return createAt;
     }
 
-    public Country setCreateAt(Date createAt) {
+    public City setCreateAt(Date createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -71,7 +64,7 @@ public class Country {
         return updateAt;
     }
 
-    public Country setUpdateAt(Date updateAt) {
+    public City setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -80,8 +73,17 @@ public class Country {
         return deleteAt;
     }
 
-    public Country setDeleteAt(Date deleteAt) {
+    public City setDeleteAt(Date deleteAt) {
         this.deleteAt = deleteAt;
+        return this;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public City setCountry(Country country) {
+        this.country = country;
         return this;
     }
 }
