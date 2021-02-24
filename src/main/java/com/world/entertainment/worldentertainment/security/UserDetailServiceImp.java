@@ -12,15 +12,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDetailServiceImp implements UserDetailsService {
 
-    private final UserService userService;
+    private final UserRepository userRepository;
 
-    public UserDetailServiceImp(UserService userService) {
-        this.userService = userService;
+    public UserDetailServiceImp(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return createUserDetails(userService.findByEmail(email));
+        var user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("User by email %s not found", email)));
+
+        return createUserDetails(user);
+
     }
 
     public UserDetails createUserDetails(User user) {
