@@ -3,7 +3,6 @@ package com.world.entertainment.worldentertainment.security;
 import com.world.entertainment.worldentertainment.entity.User;
 import com.world.entertainment.worldentertainment.exception.EntityNotFoundException;
 import com.world.entertainment.worldentertainment.repository.UserRepository;
-import com.world.entertainment.worldentertainment.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
