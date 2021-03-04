@@ -16,6 +16,9 @@ public class Entertainment {
     @ManyToOne(targetEntity = Customer.class)
     private Customer customer;
 
+    @ManyToOne(targetEntity = City.class)
+    private City city;
+
     private boolean isActive;
     private Date dateCreate;
     private Date dateUpdate;
@@ -72,6 +75,15 @@ public class Entertainment {
 
     public Entertainment setCustomer(Customer customer) {
         this.customer = customer;
+        return this;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public Entertainment setCity(City city) {
+        this.city = city;
         return this;
     }
 
